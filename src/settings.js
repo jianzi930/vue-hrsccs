@@ -2,7 +2,7 @@
 
 module.exports = {
 
-  title: 'Vue Admin Template', // 网页名称
+  title: '人力资源管理平台', // 网页名称
 
   /**
    * @type {boolean} true | false
@@ -14,5 +14,5 @@ module.exports = {
    * @type {boolean} true | false
    * @description Whether show the logo in sidebar
    */
-  sidebarLogo: false // 左侧菜单logo
+  sidebarLogo: true // 左侧菜单logo
 }
