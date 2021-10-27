@@ -23,18 +23,6 @@ export default {
     dialogShow: {
       type: Boolean
     }
-  },
-  data() {
-    return {
-
-    }
-  },
-  methods: {
-
   }
 }
 </script>
-
-<style lang="scss" scoped>
-
-</style>

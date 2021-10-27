@@ -8,7 +8,7 @@
         <el-input v-model="form.code" autocomplete="off" />
       </el-form-item>
       <el-form-item prop="manager" label="部门负责人" :label-width="formLabelWidth">
-        <el-select v-model="form.manager" placeholder="请选择活动区域" @focus="getEmployeeSimple">
+        <el-select v-model="form.manager" placeholder="请选择部门负责人" @focus="getEmployeeSimple">
           <el-option v-for="obj in employeeList" :key="obj.id" :label="obj.username" :value="obj.username" />
         </el-select>
       </el-form-item>
@@ -24,8 +24,8 @@
 </template>
 
 <script>
-import { getEmployeeSimpleApi } from '@/api/employees'
-import { addDepartmentsApi, editDepartmentsApi } from '@/api/department'
+import { getEmployeeSimpleApi } from '@/api/employee'
+import { addDepartmentsApi, updateDepartmentsApi } from '@/api/department'
 export default {
   name: 'DepartDialog',
   props: {
@@ -94,7 +94,7 @@ export default {
     },
     // 保存修改
     async editDepartments() {
-      await editDepartmentsApi(this.form)
+      await updateDepartmentsApi(this.form)
         .then(() => { this.$message.success('保存成功') })
         .catch(() => { this.$message.error('保存失败') })
     }

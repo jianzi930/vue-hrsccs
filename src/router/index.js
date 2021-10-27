@@ -10,10 +10,7 @@ import Layout from '@/layout'
 import departmentsRouter from './modules/departments'
 import employeesRouter from './modules/employees'
 import permissionRouter from './modules/permission'
-// import attendancesRouter from './modules/attendances'
-// import salarysRouter from './modules/salarys'
-import settingRouter from './modules/setting'
-// import socialRouter from './modules/social'
+import rolesRouter from './modules/roles'
 
 // 动态路由
 export const asyncRoutes = [
@@ -21,10 +18,7 @@ export const asyncRoutes = [
   departmentsRouter,
   employeesRouter,
   permissionRouter,
-  // attendancesRouter,
-  // salarysRouter,
-  settingRouter
-  // socialRouter
+  rolesRouter
 ]
 /**
  * constantRoutes
@@ -113,15 +107,21 @@ export const constantRoutes = [
       }
     ]
   },
-
-  // 404 page must be placed at the end !!!
-  { path: '*', redirect: '/404', hidden: true }
+  {
+    path: '/import',
+    component: Layout,
+    hidden: true, // 隐藏在左侧菜单中
+    children: [{
+      path: '', // 二级路由path什么都不写 表示二级默认路由
+      component: () => import('@/views/import')
+    }]
+  }
 ]
 
 const createRouter = () => new Router({
   // mode: 'history', // require service support
   scrollBehavior: () => ({ y: 0 }),
-  routes: [...constantRoutes, ...asyncRoutes]
+  routes: [...constantRoutes]
 })
 
 const router = createRouter()

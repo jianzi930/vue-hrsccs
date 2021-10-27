@@ -63,5 +63,8 @@ div:focus {
 
 // main-container global css
 .app-container {
-  padding: 20px;
+  min-height: calc(100vh - 80px);
+  background-color: #fff;
+  margin: 15px;
+  padding: 40px;
 }

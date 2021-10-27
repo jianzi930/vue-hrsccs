@@ -21,7 +21,7 @@ export function addDepartmentsApi(data) {
 /**
  *  修改部门接口
 **/
-export function editDepartmentsApi(data) {
+export function updateDepartmentsApi(data) {
   return request({
     url: `/company/department/${data.id}`,
     method: 'put',
